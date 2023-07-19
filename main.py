@@ -22,11 +22,9 @@ def on_click(x, y, button, pressed):
         positionList.append((x, y))
 
 
-listener = Listener(on_click=on_click)
-
-
 def get_position_list():
     print("Manually disenchant a champion")
+    listener = Listener(on_click=on_click)
     listener.start()
     while len(positionList) < 3:
         sleep(0.2)
@@ -34,7 +32,7 @@ def get_position_list():
 
 
 def disenchant_champions():
-    q = 200
+    q = 2000
     print("disenchanting")
     print("press 'x' to stop")
     listener = keyboard.Listener(on_press=on_press)
